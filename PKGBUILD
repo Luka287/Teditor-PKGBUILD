@@ -1,16 +1,12 @@
-# This is an example PKGBUILD file. Use this as a start to creating your own,
-# and remove these comments. For more information, see 'man PKGBUILD'.
-# NOTE: Please fill out the license field for your package! If it is unknown,
-# then please put 'unknown'.
+# Maintainer: Luka287 <Luka287@proton.me>
 
-# Maintainer: Your Name <youremail@domain.com>
-pkgname=teditor-git
-pkgver=0.0.9
+pkgname=Teditor-git
+pkgver=0.1.0
 pkgrel=1
 epoch=
 pkgdesc="This is my personal text editor made in python"
 arch=('any')
-url="https://github.com/Luka287/TED.git"
+url="https://github.com/Luka287/Teditor-git.git"
 license=('GPL')
 groups=()
 depends=(tk)
@@ -30,7 +26,7 @@ md5sums=()
 validpgpkeys=()
 
 build() {
-	cd "TED-${pkgver}"
+	cd "$pkgname-$pkgver"
 	sudo make install
 }
 
@@ -39,9 +35,8 @@ package() {
 }
 
 check() {
-	cd "TED-${pkgver}"
+	cd "$pkgname-$pkgver"
 	make -k check
 }
 
-
-sha256sums=('f1df3caca89719fb0aee0b2f58e99d43da5bf68e7d572902238c72fcbd3deeb1')
+sha256sums=('9cf1d3684124b829fec806cb5487fc6cd64b9cef18160615bd407169d6b66a40')
