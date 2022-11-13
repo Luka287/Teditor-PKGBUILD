@@ -5,7 +5,7 @@
 
 # Maintainer: Your Name <youremail@domain.com>
 pkgname=teditor-git
-pkgver=0.0.8
+pkgver=0.0.9
 pkgrel=1
 epoch=
 pkgdesc="This is my personal text editor made in python"
@@ -44,4 +44,4 @@ check() {
 }
 
 
-sha256sums=('27b97d2213783bad9b36e9d31a0478b19764003b7850f3c9bfec1a9c554d2505')
+sha256sums=('f1df3caca89719fb0aee0b2f58e99d43da5bf68e7d572902238c72fcbd3deeb1')
