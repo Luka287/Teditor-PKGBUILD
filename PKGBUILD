@@ -1,7 +1,7 @@
 # Maintainer: Luka287 <Luka287@proton.me>
 
 pkgname=Teditor-git
-pkgver=0.1.0
+pkgver=1.0.0
 pkgrel=1
 epoch=
 pkgdesc="This is my personal text editor made in python"
@@ -39,4 +39,5 @@ check() {
 	make -k check
 }
 
-sha256sums=('9cf1d3684124b829fec806cb5487fc6cd64b9cef18160615bd407169d6b66a40')
+
+sha256sums=('915a2bcf8d9ebeeb12bc183d4e21777b47b3c4eceb8b7f75278542b7e30a269e')
