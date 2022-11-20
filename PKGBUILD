@@ -1,7 +1,7 @@
 # Maintainer: Luka287 <Luka287@proton.me>
 
 pkgname=Teditor-git
-pkgver=1.0.0
+pkgver=1.1.0
 pkgrel=1
 epoch=
 pkgdesc="This is my personal text editor made in python"
@@ -18,20 +18,24 @@ conflicts=()
 replaces=()
 backup=()
 options=()
-install=tedit.install
+install=
 changelog=
 source=("https://github.com/Luka287/TED/archive/refs/tags/$pkgver.tar.gz")
 noextract=()
 md5sums=()
 validpgpkeys=()
 
-build() {
-	cd "$pkgname-$pkgver"
-	sudo make install
-}
-
 package() {
-	echo "nothin"
+	cd "$pkgname-$pkgver"
+	mkdir -p ${pkgdir}/opt/${pkgname}
+	cp -rf * ${pkgdir}/opt/${pkgname}
+	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -Dm644 README.org "${pkgdir}/usr/share/doc/${pkgname}/README.org"
+	install -Dm644 src/teditor/ted.py "${pkgdir}/usr/lib/${pkgname}/ted.py"
+	install -Dm755 teditor "${pkgdir}/usr/bin/teditor"
+	install -Dm744 teditor-logo.png "${pkgdir}/usr/share/pixmaps/teditor-logo.png"
+	install -Dm714 Teditor.desktop "${pkgdir}/usr/share/applications/Teditor.desktop"
+	
 }
 
 check() {
@@ -40,4 +44,5 @@ check() {
 }
 
 
-sha256sums=('915a2bcf8d9ebeeb12bc183d4e21777b47b3c4eceb8b7f75278542b7e30a269e')
+
+sha256sums=('091e1f6644bcd9d50acf239a35f05e016842160700cff54d64df21e5b6a39a51')
