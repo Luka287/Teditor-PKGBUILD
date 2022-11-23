@@ -1,7 +1,7 @@
 # Maintainer: Luka287 <Luka287@proton.me>
 
 pkgname=Teditor-git
-pkgver=1.1.1
+pkgver=1.1.2
 pkgrel=1
 epoch=
 pkgdesc="This is my personal text editor made in python"
@@ -10,7 +10,7 @@ url="https://github.com/Luka287/Teditor-git.git"
 license=('GPL')
 groups=()
 depends=(tk)
-makedepends=()
+makedepends=(python-pip)
 checkdepends=()
 optdepends=()
 provides=()
@@ -24,6 +24,11 @@ source=("https://github.com/Luka287/TED/archive/refs/tags/$pkgver.tar.gz")
 noextract=()
 md5sums=()
 validpgpkeys=()
+
+build() {
+	cd "$pkgname-$pkgver"
+	make
+}
 
 package() {
 	cd "$pkgname-$pkgver"
@@ -46,4 +51,5 @@ check() {
 
 
 
-sha256sums=('7317a8b5e28660bdf1dc85d2a885b74d2a612e36aeb144e580977b0568c4a796')
+
+sha256sums=('dc854314e3255e3f7087d8cdea01a8a0eb5c0d454769467889a8f09f643e1b01')
